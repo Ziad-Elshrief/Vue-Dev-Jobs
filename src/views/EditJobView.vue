@@ -26,7 +26,7 @@ const toast = useToast();
 const router = useRouter();
 const route = useRoute();
 const jobId = route.params.id;
-let isLoadingUpdate = ref(false);
+const isLoadingUpdate = ref(false);
 
 const handleSubmit = async () => {
   const updatedJob = {
@@ -43,7 +43,7 @@ const handleSubmit = async () => {
     },
   };
   try {
-    isLoadingUpdate = true;
+    isLoadingUpdate.value = true;
     const response = await axios.put(`/api/jobs/${jobId}`, updatedJob);
     router.push(`/jobs/${response.data.id}`);
     toast.success("Job was updated successfully");
@@ -51,7 +51,7 @@ const handleSubmit = async () => {
     console.error("Error updating job ", error);
     toast.error("Job was not updated");
   } finally {
-    isLoadingUpdate = false;
+    isLoadingUpdate.value = false;
   }
 };
 onMounted(async () => {

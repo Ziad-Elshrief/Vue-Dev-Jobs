@@ -20,8 +20,7 @@ const form = reactive({
 });
 const toast = useToast();
 const router = useRouter();
-
-let isLoading = ref(false);
+const isLoading = ref(false);
 const handleSubmit = async () => {
   const newJob = {
     title: form.title,
@@ -37,7 +36,7 @@ const handleSubmit = async () => {
     },
   };
   try {
-    isLoading = true;
+    isLoading.value = true;
     const response = await axios.post("/api/jobs", newJob);
     router.push(`/jobs/${response.data.id}`);
     toast.success("Job was added successfully");
@@ -45,7 +44,7 @@ const handleSubmit = async () => {
     console.error("Error adding job ", error);
     toast.error("Job was not added");
   } finally {
-    isLoading = false;
+    isLoading.value = false;
   }
 };
 </script>

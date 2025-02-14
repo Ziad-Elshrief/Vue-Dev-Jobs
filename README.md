@@ -11,6 +11,16 @@ A Single Page Application (SPA) built with Vue.js where users can browse job lis
 - **Icons**: Lucide Vue
 - **Notifications**: Vue Toastification (Used to provide user feedback when adding, deleting, or updating jobs)
 
+## Demo Screenshots
+### Home Page
+![Home Page](/demo/Home_page.png)
+### Jobs Page
+![Jobs Page](/demo/jobs_page.png)
+### Single Job Page
+![Job Page](/demo/job_page.png)
+### Add Job Page
+![Add Job Page](/demo/add_job_page.png)
+
 ## Project Setup
 
 ### Install Dependencies
